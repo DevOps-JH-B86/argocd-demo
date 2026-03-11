@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: cm-demo-container
-          image: satishkarengula/demo-pyapp:v1
+          image: satishkarengula/demo-pyapp:v2
           ports:
             - containerPort: 5000
           # envFrom:
