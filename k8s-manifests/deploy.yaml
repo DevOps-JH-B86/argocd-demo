@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cm-demo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cm-demo
+  template:
+    metadata:
+      labels:
+        app: cm-demo
+    spec:
+      containers:
+        - name: cm-demo-container
+          image: satishkarengula/cm-demo-01:v2
+          ports:
+            - containerPort: 5000
+          envFrom:
+          - secretRef:
+              name: my-secret
+          # env:
+          #   - name: DB_NAME
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: dev-cm
+          #         key: DB_NAME
+          #   - name: ENV_NAME
+          #     valueFrom:
+          #       configMapKeyRef:
+          #         name: dev-cm
+          #         key: ENV_NAME

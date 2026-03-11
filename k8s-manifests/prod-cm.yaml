@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prod-cm
+data:
+  DB_NAME: "prod-db:5432"
+  ENV_NAME: "PROD"
