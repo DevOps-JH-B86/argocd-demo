@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
         - name: cm-demo-container
-          image: satishkarengula/cm-demo-01:v2
+          image: satishkarengula/demo-pyapp:v1
           ports:
             - containerPort: 5000
-          envFrom:
-          - secretRef:
-              name: my-secret
+          # envFrom:
+          # - secretRef:
+          #     name: my-secret
           # env:
           #   - name: DB_NAME
           #     valueFrom:
